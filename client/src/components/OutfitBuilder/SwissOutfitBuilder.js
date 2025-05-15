@@ -139,8 +139,17 @@ const SwissOutfitBuilder = () => {
 
           <div className="preview-mannequin">
             <div className={`mannequin-item top ${selectedOutfit.top ? 'selected' : ''}`}
-              onDoubleClick={() => handleMannequinDoubleClick(selectedOutfit.top)}
+              role="button"
+              tabIndex={0}
+              onClick={() => handleMannequinDoubleClick(selectedOutfit.top)}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleMannequinDoubleClick(selectedOutfit.top);
+                }
+              }}
               style={{ cursor: selectedOutfit.top ? 'pointer' : 'default' }}
+              aria-label={selectedOutfit.top ? `View details for ${findItemById(selectedOutfit.top)?.name}` : undefined}
             >
               {selectedOutfit.top ? (
                 <img 
@@ -157,8 +166,17 @@ const SwissOutfitBuilder = () => {
             </div>
 
             <div className={`mannequin-item bottom ${selectedOutfit.bottom ? 'selected' : ''}`}
-              onDoubleClick={() => handleMannequinDoubleClick(selectedOutfit.bottom)}
+              role="button"
+              tabIndex={0}
+              onClick={() => handleMannequinDoubleClick(selectedOutfit.bottom)}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleMannequinDoubleClick(selectedOutfit.bottom);
+                }
+              }}
               style={{ cursor: selectedOutfit.bottom ? 'pointer' : 'default' }}
+              aria-label={selectedOutfit.bottom ? `View details for ${findItemById(selectedOutfit.bottom)?.name}` : undefined}
             >
               {selectedOutfit.bottom ? (
                 <img 
@@ -194,10 +212,20 @@ const SwissOutfitBuilder = () => {
             </div>
             <div className="items-grid">
               {clothingItems.tops.map(item => (
-                <div 
+                <button 
                   key={item.id}
                   className={`item-card-swiss tops ${selectedOutfit.top === item.id ? 'selected' : ''}`}
                   onClick={() => selectItem(item.id, 'top')}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      selectItem(item.id, 'top');
+                    }
+                  }}
+                  aria-pressed={selectedOutfit.top === item.id}
+                  aria-label={`Select ${item.name} as top`}
+                  tabIndex={0}
+                  type="button"
                 >
                   <div className="item-image-container">
                     <img src={item.image} alt={item.name} />
@@ -208,7 +236,7 @@ const SwissOutfitBuilder = () => {
                   <div className="item-details">
                     <div className="item-name">{item.name}</div>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           </div>
@@ -220,10 +248,20 @@ const SwissOutfitBuilder = () => {
             </div>
             <div className="items-grid">
               {clothingItems.bottoms.map(item => (
-                <div 
+                <button 
                   key={item.id}
                   className={`item-card-swiss bottoms ${selectedOutfit.bottom === item.id ? 'selected' : ''}`}
                   onClick={() => selectItem(item.id, 'bottom')}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      selectItem(item.id, 'bottom');
+                    }
+                  }}
+                  aria-pressed={selectedOutfit.bottom === item.id}
+                  aria-label={`Select ${item.name} as bottom`}
+                  tabIndex={0}
+                  type="button"
                 >
                   <div className="item-image-container">
                     <img src={item.image} alt={item.name} />
@@ -234,7 +272,7 @@ const SwissOutfitBuilder = () => {
                   <div className="item-details">
                     <div className="item-name">{item.name}</div>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           </div>

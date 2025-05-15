@@ -2,6 +2,7 @@ import React from 'react';
 import './old/CartoonWardrobe.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faHeart as faHeartSolid, faTimes, faTrash, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link, useLocation } from 'react-router-dom';
 
 // Presentational component for the wardrobe window
 export function WardrobeView({
@@ -93,6 +94,7 @@ export function WardrobeMenuBar({
   suggestionsDropdown,
   searchDropdown
 }) {
+  const location = useLocation();
   return (
     <>
       <div className="cartoon-window-bar">
@@ -110,14 +112,52 @@ export function WardrobeMenuBar({
         <div className="cartoon-section">Fall Fashions</div>
       </div>
       <div className="cartoon-menu-bar" ref={menuBarRef} style={{ position: 'relative' }}>
-        <span style={{ cursor: 'pointer' }} onClick={() => window.location = '/'}>Home</span>
-        <span ref={cartMenuRef} style={{ cursor: 'pointer' }} onClick={onCartClick}>Cart</span>
-        <span ref={favoritesMenuRef} style={{ cursor: 'pointer' }} onClick={onFavoritesClick}>Favorites</span>
-        <span ref={toolsMenuRef} style={{ cursor: 'pointer' }} onClick={onToolsClick}>Tools</span>
-        <span ref={suggestionsMenuRef} style={{ cursor: 'pointer' }} onClick={onSuggestionsClick}>Suggestions</span>
-        <span ref={searchMenuRef} style={{ cursor: 'pointer', marginLeft: '0.5rem' }} onClick={onSearchClick}>
+        <Link
+          to="/"
+          className={`menu-link${location.pathname === '/' ? ' active' : ''}`}
+        >
+          Home
+        </Link>
+        <Link
+          to="/cart"
+          className={`menu-link${location.pathname === '/cart' ? ' active' : ''}`}
+          ref={cartMenuRef}
+          onClick={onCartClick}
+        >
+          Cart
+        </Link>
+        <Link
+          to="/favorites"
+          className={`menu-link${location.pathname === '/favorites' ? ' active' : ''}`}
+          ref={favoritesMenuRef}
+          onClick={onFavoritesClick}
+        >
+          Favorites
+        </Link>
+        <Link
+          to="/tools"
+          className={`menu-link${location.pathname === '/tools' ? ' active' : ''}`}
+          ref={toolsMenuRef}
+          onClick={onToolsClick}
+        >
+          Tools
+        </Link>
+        <Link
+          to="/suggestions"
+          className={`menu-link${location.pathname === '/suggestions' ? ' active' : ''}`}
+          ref={suggestionsMenuRef}
+          onClick={onSuggestionsClick}
+        >
+          Suggestions
+        </Link>
+        <button 
+          className="menu-link"
+          ref={searchMenuRef}
+          onClick={onSearchClick}
+          aria-label="Search"
+        >
           <FontAwesomeIcon icon={faSearch} />
-        </span>
+        </button>
         {cartDropdown}
         {favoritesDropdown}
         {toolsDropdown}
@@ -154,7 +194,14 @@ export function CartPanel({ cart, removeFromCart, showPopup, setShowCartPanel, s
               <img src={item.image} alt={item.name} className="favorites-item-img" />
               <span className="favorites-item-name">{item.name}</span>
               <span className="cart-trash-wrap">
-                <span className="cart-trash-icon" onClick={() => { removeFromCart(item.id); showPopup('Removed from cart.'); }}>🗑️</span>
+                <button
+                  className="cart-trash-icon"
+                  onClick={() => { removeFromCart(item.id); showPopup('Removed from cart.'); }}
+                  aria-label="Remove from cart"
+                  type="button"
+                >
+                  🗑️
+                </button>
               </span>
             </div>
           ))

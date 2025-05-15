@@ -141,7 +141,6 @@ export function WardrobeController() {
         onChange={e => setSearchValue(e.target.value)}
         placeholder="Search..."
         style={{ width: '100%', padding: '0.5rem', fontSize: '1rem', border: '1px solid #ccc', borderRadius: 2 }}
-        autoFocus
       />
     </div>
   );

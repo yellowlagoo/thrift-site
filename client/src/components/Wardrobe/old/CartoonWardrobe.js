@@ -43,11 +43,6 @@ const CartoonWardrobe = () => {
   const favoritesMenuRef = useRef();
   const toolsMenuRef = useRef();
   const menuBarRef = useRef();
-  const [suggestionsDropdownPos, setSuggestionsDropdownPos] = useState({ left: 0, top: 0 });
-  const [searchDropdownPos, setSearchDropdownPos] = useState({ left: 0, top: 0 });
-  const [cartDropdownPos, setCartDropdownPos] = useState({ left: 0, top: 0 });
-  const [favoritesDropdownPos, setFavoritesDropdownPos] = useState({ left: 0, top: 0 });
-  const [toolsDropdownPos, setToolsDropdownPos] = useState({ left: 0, top: 0 });
 
   // Outfit suggestions (using available inventory)
   const outfitSuggestions = [

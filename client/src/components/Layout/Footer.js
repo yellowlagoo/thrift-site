@@ -14,16 +14,40 @@ const Footer = () => {
             Secondhand, sustainable.
           </p>
           <div style={{ marginTop: 'var(--space-xl)', display: 'flex', gap: 'var(--space-md)' }}>
-            <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: '1.25rem' }}>
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Visit our Instagram"
+              style={{ color: 'var(--color-text-secondary)', fontSize: '1.25rem' }}
+            >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: '1.25rem' }}>
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Visit our Facebook"
+              style={{ color: 'var(--color-text-secondary)', fontSize: '1.25rem' }}
+            >
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: '1.25rem' }}>
+            <a 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Visit our Twitter"
+              style={{ color: 'var(--color-text-secondary)', fontSize: '1.25rem' }}
+            >
               <FontAwesomeIcon icon={faTwitter} />
             </a>
-            <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: '1.25rem' }}>
+            <a 
+              href="https://pinterest.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Visit our Pinterest"
+              style={{ color: 'var(--color-text-secondary)', fontSize: '1.25rem' }}
+            >
               <FontAwesomeIcon icon={faPinterest} />
             </a>
           </div>

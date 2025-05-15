@@ -725,4 +725,27 @@
   text-align: center;
   pointer-events: none;
   margin-top: 2px;
+}
+
+.menu-link {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.menu-link:focus,
+.menu-link:hover {
+  text-decoration: underline;
+  color: #245edb;
+}
+.menu-link.active {
+  color: #245edb;
+  text-decoration: underline;
+  font-weight: 500;
 } 

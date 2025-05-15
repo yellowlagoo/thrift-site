@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
+
+.cart-card-bg {
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3rem 0;
+}
+
+.cart-card {
+  background: #fffbe8;
+  border: 1.5px solid #bdbdbd;
+  border-radius: 6px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+  width: 370px;
+  max-width: 95vw;
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.cart-card-header-row {
+  display: flex;
+  border-bottom: 2px solid #2a5ca7;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+}
+
+.cart-card-header {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2a5ca7;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.cart-card-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1.5px solid #2a5ca7;
+  min-height: 2.2rem;
+  font-size: 1.08rem;
+  background: transparent;
+}
+
+.cart-card-row.faded {
+  color: #888;
+  opacity: 0.7;
+}
+
+.cart-card-date {
+  flex: 1;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #2a5ca7;
+  letter-spacing: 0.08em;
+}
+
+.cart-card-name {
+  flex: 2.2;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  color: #222;
+}
+
+.handwritten {
+  font-family: 'Ballet', cursive;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.cart-card-qty {
+  flex: 0.7;
+  text-align: right;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #b71c1c;
+}
+
+@media (max-width: 500px) {
+  .cart-card {
+    width: 99vw;
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+  }
+  .cart-card-header, .cart-card-date, .cart-card-name, .cart-card-qty {
+    font-size: 0.95rem;
+  }
+  .handwritten {
+    font-size: 1.05rem;
+  }
+}
+
+.cart-checkout-btn {
+  display: block;
+  width: 370px;
+  max-width: 95vw;
+  margin: 2rem 0 0 0;
+  background: #2a5ca7;
+  color: #fffbe8;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: none;
+  border-radius: 6px;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px 0 rgba(42,92,167,0.08);
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.cart-checkout-btn:hover, .cart-checkout-btn:focus {
+  background: #174a8b;
+  color: #fff;
+}
+
+.cart-ticket-bg {
+  background: #f8f5e3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3rem 0;
+}
+
+.cart-ticket-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  width: 100%;
+  align-items: center;
+}
+
+.cart-ticket {
+  display: flex;
+  flex-direction: row;
+  background: #fffbe8;
+  border: 2.5px solid #222;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+  width: 370px;
+  max-width: 95vw;
+  min-height: 120px;
+  position: relative;
+  overflow: visible;
+}
+
+.cart-ticket-main {
+  flex: 1 1 0;
+  padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-ticket-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #222;
+}
+
+.cart-ticket-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.cart-ticket-label {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #2a5ca7;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.cart-ticket-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #181818;
+  margin-left: 1.2rem;
+}
+
+.cart-ticket-stub {
+  width: 60px;
+  background: #f3e6c6;
+  border-left: 2.5px dashed #222;
+  border-radius: 0 14px 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 0.2rem;
+  position: relative;
+  min-height: 100px;
+}
+
+.cart-ticket-stub-label {
+  font-size: 0.8rem;
+  color: #b71c1c;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.cart-ticket-stub-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2a5ca7;
+}
+
+@media (max-width: 500px) {
+  .cart-ticket {
+    width: 99vw;
+    min-width: 0;
+    padding: 0;
+  }
+  .cart-ticket-main {
+    padding: 1rem 0.5rem 1rem 0.7rem;
+  }
+  .cart-ticket-stub {
+    width: 44px;
+    min-height: 80px;
+    padding: 0.5rem 0.1rem;
+  }
+  .cart-ticket-title {
+    font-size: 1.05rem;
+  }
+}
+
+/* Receipt background and paper */
+.receipt-bg {
+  background: #f8f5e3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3rem 0;
+}
+
+.receipt-paper {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.09);
+  width: 370px;
+  max-width: 95vw;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.receipt-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.7rem;
+  color: #222;
+}
+
+.receipt-dashed {
+  border-bottom: 2px dashed #bdbdbd;
+  margin: 1.1rem 0 1.1rem 0;
+}
+
+.receipt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.receipt-item-row {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  font-size: 1.08rem;
+}
+
+.receipt-item-num {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.1rem;
+  color: #bdbdbd;
+  min-width: 2.2em;
+}
+
+.receipt-item-main {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.receipt-item-name {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #222;
+  flex: 1;
+  text-align: left;
+  margin-right: 0.7rem;
+}
+
+.receipt-item-img {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 7px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.07);
+  background: #f4f4f4;
+  border: 1px solid #ececec;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.receipt-item-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 70px;
+}
+
+.receipt-item-price-old {
+  color: #bdbdbd;
+  text-decoration: line-through;
+  font-size: 0.98rem;
+  margin-bottom: 0.1rem;
+}
+
+.receipt-item-price {
+  color: #b71c1c;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+.receipt-summary {
+  margin: 1.2rem 0 0.7rem 0;
+}
+
+.receipt-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.08rem;
+  margin-bottom: 0.2rem;
+}
+
+.receipt-summary-row.total {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #245edb;
+}
+
+.receipt-footer-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.98rem;
+  color: #888;
+  margin: 1.1rem 0 0.5rem 0;
+}
+
+.receipt-barcode {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0.7rem 0 0.2rem 0;
+}
+
+.receipt-barcode-img {
+  width: 220px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.receipt-footer-brand {
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.1rem;
+  color: #bdbdbd;
+  margin-top: 0.2rem;
+  letter-spacing: 0.12em;
+}
+
+.receipt-item-remove {
+  background: none;
+  border: none;
+  color: #b71c1c;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  margin-left: 0.5rem;
+}
+
+.receipt-item-row:hover .receipt-item-remove {
+  opacity: 1;
+}
+
+.receipt-footer-logo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Remove old ticket styles if not needed */
+.cart-ticket-bg, .cart-ticket-stack, .cart-ticket, .cart-ticket-main, .cart-ticket-title, .cart-ticket-row, .cart-ticket-label, .cart-ticket-value, .cart-ticket-stub, .cart-ticket-stub-label, .cart-ticket-stub-value {
+  display: none !important;
+} 

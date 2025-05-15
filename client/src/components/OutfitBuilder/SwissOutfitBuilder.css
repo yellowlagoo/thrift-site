@@ -1,0 +1,641 @@
+/* SwissOutfitBuilder.css - Implementing Swiss Design Principles */
+
+/* =========================================
+   Core Design System
+   ========================================= */
+:root {
+  /* Typography Scale */
+  --font-xs: 0.75rem;    /* 12px */
+  --font-sm: 0.875rem;   /* 14px */
+  --font-md: 1rem;       /* 16px */
+  --font-lg: 1.25rem;    /* 20px */
+  --font-xl: 1.5rem;     /* 24px */
+  --font-2xl: 2rem;      /* 32px */
+  --font-3xl: 2.5rem;    /* 40px */
+  --font-4xl: 3rem;      /* 48px */
+  
+  /* Spacing Scale */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  
+  /* Color System */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #EEEEEE;
+  --color-gray-300: #E0E0E0;
+  --color-gray-400: #BDBDBD;
+  --color-gray-500: #9E9E9E;
+  --color-gray-600: #757575;
+  --color-gray-700: #616161;
+  --color-gray-800: #424242;
+  --color-gray-900: #212121;
+  
+  /* Accent Colors (Limited Palette) */
+  --color-accent-red: #E53935;
+  --color-accent-yellow: #FBC02D;
+  --color-accent-blue: #1E88E5;
+  
+  /* Functional Colors */
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-gray-100);
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-gray-700);
+  --color-text-tertiary: var(--color-gray-500);
+  --color-border: var(--color-gray-300);
+  --color-selection: var(--color-accent-yellow);
+  --color-interaction: var(--color-accent-blue);
+  
+  /* Sizing */
+  --max-width: 1280px;
+  --border-radius: 0;
+  --card-border-width: 1px;
+  --header-height: 80px;
+  
+  /* Grid System */
+  --grid-columns: 12;
+  --grid-gap: var(--space-lg);
+}
+
+/* =========================================
+   Base Styles & Typography
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--font-4xl);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: var(--font-3xl);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: var(--font-2xl);
+  letter-spacing: -0.01em;
+}
+
+h4 {
+  font-size: var(--font-xl);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+/* =========================================
+   Layout & Container
+   ========================================= */
+.swiss-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.swiss-section {
+  margin-bottom: var(--space-3xl);
+}
+
+.swiss-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+}
+
+.swiss-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+  margin: var(--space-2xl) 0;
+}
+
+/* Swiss-style section title */
+.swiss-title {
+  text-transform: uppercase;
+  border-bottom: 4px solid var(--color-black);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  width: 100%;
+  position: relative;
+}
+
+.swiss-subtitle {
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-secondary);
+}
+
+/* =========================================
+   Outfit Builder Main Container
+   ========================================= */
+.outfit-studio-swiss {
+  padding: var(--space-2xl) 0;
+}
+
+.outfit-header-swiss {
+  text-align: left;
+  margin-bottom: var(--space-2xl);
+}
+
+.outfit-header-swiss h1 {
+  font-size: var(--font-4xl);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-sm);
+}
+
+.outfit-header-swiss p {
+  font-size: var(--font-lg);
+  color: var(--color-text-secondary);
+  max-width: 70%;
+}
+
+/* Grid layout for outfit builder */
+.outfit-builder-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-xl);
+}
+
+@media (max-width: 992px) {
+  .outfit-builder-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   Outfit Preview Panel
+   ========================================= */
+.outfit-preview-panel {
+  background-color: var(--color-bg-secondary);
+  padding: var(--space-xl);
+  position: relative;
+  border: var(--card-border-width) solid var(--color-border);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.05) inset;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.preview-header h2 {
+  font-size: var(--font-2xl);
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.preview-mannequin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xl);
+  position: relative;
+  max-width: 480px;
+  min-height: 700px;
+  width: 100%;
+}
+
+.mannequin-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-white);
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.mannequin-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02), transparent);
+}
+
+/* Top item adjustments for shirts */
+.mannequin-item.top {
+  border-left: 4px solid var(--color-accent-blue);
+  height: 220px;
+  z-index: 2;
+  border-radius: 0 0 4px 0;
+}
+
+/* Bottom item adjustments for pants */
+.mannequin-item.bottom {
+  border-left: 4px solid var(--color-accent-red);
+  height: 320px;
+  margin-top: -10px;
+  z-index: 1;
+}
+
+/* Shoes item with shadow */
+.mannequin-item.shoes {
+  border-left: 4px solid var(--color-accent-yellow);
+  height: 120px;
+  width: 80%;
+  margin-top: -10px;
+  align-self: flex-end;
+  margin-right: 30px;
+  transform: perspective(400px) rotateX(10deg);
+  transform-origin: center bottom;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced hover effects */
+.mannequin-item:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Selected state for mannequin items */
+.mannequin-item.selected {
+  border-width: 4px;
+}
+
+.mannequin-item.top.selected {
+  border-color: var(--color-accent-blue);
+}
+
+.mannequin-item.bottom.selected {
+  border-color: var(--color-accent-red);
+}
+
+.mannequin-item.shoes.selected {
+  border-color: var(--color-accent-yellow);
+}
+
+/* Add a title above the mannequin */
+.preview-mannequin::after {
+  content: 'YOUR LOOK';
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  font-size: var(--font-xs);
+  letter-spacing: 1px;
+  color: var(--color-text-tertiary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 4px;
+  width: 100px;
+  text-align: center;
+}
+
+.mannequin-item img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+/* Improve empty slot styling */
+.empty-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+  font-size: var(--font-xs);
+  letter-spacing: 0.05em;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-gray-100),
+    var(--color-gray-100) 10px,
+    var(--color-white) 10px,
+    var(--color-white) 20px
+  );
+}
+
+.empty-slot .empty-icon {
+  font-size: var(--font-xl);
+  margin-bottom: var(--space-sm);
+  color: var(--color-gray-500);
+  font-weight: 700;
+}
+
+.match-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.rating-label {
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+.rating-hearts {
+  display: flex;
+}
+
+.heart {
+  color: var(--color-accent-red);
+  margin-right: 2px;
+}
+
+.heart.empty {
+  color: var(--color-gray-300);
+}
+
+.outfit-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.btn-swiss {
+  padding: var(--space-md) var(--space-lg);
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: var(--font-sm);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-swiss {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn-primary-swiss:hover {
+  background-color: var(--color-gray-800);
+}
+
+.btn-secondary-swiss {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+}
+
+.btn-secondary-swiss:hover {
+  background-color: var(--color-gray-100);
+}
+
+.btn-icon {
+  margin-right: var(--space-sm);
+}
+
+/* =========================================
+   Items Selection Panel
+   ========================================= */
+.selection-panels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.category-panel {
+  position: relative;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+.category-title {
+  font-size: var(--font-xl);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.category-title.tops::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-accent-blue);
+}
+
+.category-title.bottoms::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-accent-red);
+}
+
+.category-title.shoes::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-accent-yellow);
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 576px) {
+  .items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.item-card-swiss {
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border: var(--card-border-width) solid var(--color-border);
+}
+
+.item-card-swiss:hover {
+  border-color: var(--color-black);
+}
+
+.item-card-swiss.selected {
+  border-color: var(--color-black);
+  border-width: 2px;
+}
+
+.item-card-swiss.tops.selected {
+  border-top: 4px solid var(--color-accent-blue);
+}
+
+.item-card-swiss.bottoms.selected {
+  border-top: 4px solid var(--color-accent-red);
+}
+
+.item-card-swiss.shoes.selected {
+  border-top: 4px solid var(--color-accent-yellow);
+}
+
+.item-image-container {
+  background-color: var(--color-gray-100);
+  position: relative;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  overflow: hidden;
+}
+
+.item-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.item-card-swiss:hover .item-image-container img {
+  transform: scale(1.05);
+}
+
+.item-details {
+  padding: var(--space-md);
+}
+
+.item-name {
+  font-size: var(--font-md);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.item-price {
+  font-size: var(--font-sm);
+  font-weight: 700;
+}
+
+/* Selected indicator */
+.selected-marker {
+  position: absolute;
+  top: var(--space-xs);
+  right: var(--space-xs);
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Combinations section */
+.combinations-panel {
+  margin-top: var(--space-2xl);
+}
+
+.combo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 576px) {
+  .combo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.combo-card {
+  border: var(--card-border-width) solid var(--color-border);
+  background-color: var(--color-white);
+  padding: var(--space-lg);
+}
+
+.combo-title {
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-md);
+  font-weight: 700;
+}
+
+.combo-rating {
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-md);
+  color: var(--color-text-secondary);
+}
+
+.combo-btn {
+  margin-top: var(--space-md);
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: var(--font-xs);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-black);
+  padding: 0 0 var(--space-xs) 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.combo-btn:hover {
+  border-bottom-width: 2px;
+}
+
+/* Add human silhouette in the background */
+.preview-mannequin::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 250' fill='%23f5f5f5'%3E%3Cpath d='M50,15 C58,15 65,22 65,30 C65,38 58,45 50,45 C42,45 35,38 35,30 C35,22 42,15 50,15 Z M35,50 L65,50 L70,110 L65,180 L58,180 L58,220 L42,220 L42,180 L35,180 L30,110 L35,50 Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+} 

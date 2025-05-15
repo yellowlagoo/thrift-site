@@ -1,0 +1,928 @@
+/* IntegratedOutfitBuilder.css - 901 Digital Outfit Studio */
+
+/* Boot sequence styling */
+.boot-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  font-family: 'SF Mono', monospace;
+  padding: 20% 10%;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.boot-content {
+  width: 90%;
+  max-width: 600px;
+}
+
+.boot-content div {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.boot-progress {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  margin: 20px 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.boot-bar {
+  height: 100%;
+  width: 0%;
+  background-color: white;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Main outfit studio layout */
+.outfit-studio {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header styling */
+.outfit-studio-header {
+  text-align: left;
+  padding: 2rem 0;
+  position: relative;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.outfit-studio-header h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #3A3532;
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 0px;
+}
+
+.outfit-studio-header p {
+  color: #666;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+/* Enhanced heading styles */
+.builder-section-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  color: #968576;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.builder-section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #E6DDD0;
+  margin: 8px auto 0;
+}
+
+/* Category headers */
+.category-header {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: #968576;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed #E6DDD0;
+}
+
+/* Panel header enhancement */
+.panel-header h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #3A3532;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.panel-header h2::before {
+  content: '✧';
+  margin-right: 8px;
+  color: #968576;
+}
+
+/* Feature heading */
+.feature-heading {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #8AA992;
+  font-weight: 600;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feature-heading::before {
+  content: '♥';
+  color: #D27D76;
+}
+
+/* Main container for outfit builder */
+.outfit-builder-container {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 2fr;
+  gap: 2rem;
+  margin-top: 1rem;
+  background-image: linear-gradient(rgba(200, 187, 176, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 187, 176, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* Left panel - Outfit display */
+.outfit-display-panel {
+  background-color: white;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.outfit-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.outfit-preview-header h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.7rem;
+  color: #000;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* Mannequin area */
+.outfit-mannequin {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: #FAFAF8;
+  border-radius: 8px;
+  padding: 2rem;
+  min-height: 500px;
+  position: relative;
+}
+
+.mannequin-top,
+.mannequin-bottom,
+.mannequin-shoes {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  z-index: 1;
+}
+
+.mannequin-top {
+  width: 240px;
+  height: 150px;
+}
+
+.mannequin-bottom {
+  width: 200px;
+  height: 180px;
+}
+
+.mannequin-shoes {
+  width: 160px;
+  height: 100px;
+}
+
+.mannequin-top img,
+.mannequin-bottom img,
+.mannequin-shoes img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.mannequin-top.item-added,
+.mannequin-bottom.item-added,
+.mannequin-shoes.item-added {
+  border-color: #000;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.empty-slot {
+  color: #aaa;
+  font-style: normal;
+  text-align: center;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.empty-slot .empty-icon {
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+.empty-slot span {
+  display: block;
+}
+
+/* Lock button */
+.lock-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: #999;
+  transition: all 0.2s ease;
+}
+
+.lock-button:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.lock-button.locked {
+  color: #D27D76;
+  background-color: rgba(210, 125, 118, 0.1);
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.match-hearts {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  color: #968576;
+  margin-right: 2px;
+}
+
+.heart.empty {
+  opacity: 0.3;
+}
+
+.outfit-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  gap: 0.5rem;
+}
+
+.outfit-actions button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.outfit-save-btn {
+  background-color: #EFECE7;
+  color: #3A3532;
+}
+
+.outfit-buy-btn {
+  background-color: #968576;
+  color: white;
+}
+
+.ai-suggestion-btn {
+  background-color: #8AA992;
+  color: white;
+}
+
+.outfit-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-icon {
+  font-size: 0.8rem;
+}
+
+/* Right side panels */
+.shopping-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.shopping-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.panel-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.panel-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.scroll-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.scroll-btn:hover {
+  background-color: #000;
+  color: white;
+}
+
+.items-carousel {
+  position: relative;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ddd transparent;
+  padding: 4px;
+}
+
+.items-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.items-carousel::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.items-carousel::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.carousel-inner {
+  display: flex;
+  gap: 16px;
+  padding: 4px 1px;
+}
+
+.item-card {
+  min-width: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border: 1px solid transparent;
+  background-color: #f9f9f9;
+}
+
+.item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+
+.item-card.selected {
+  border-color: #968576;
+  background-color: rgba(150, 133, 118, 0.05);
+}
+
+.item-image {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.item-image img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.item-card:hover .item-image img {
+  transform: scale(1.05);
+}
+
+.info-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  color: #333;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.item-card:hover .info-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-btn:hover {
+  background-color: #968576;
+  color: white;
+}
+
+.item-info {
+  text-align: left;
+}
+
+.item-name {
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-price {
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Item preview modal */
+.item-preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.close-modal {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.close-modal:hover {
+  background-color: #000;
+  color: white;
+}
+
+.preview-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px 0 0 12px;
+}
+
+.preview-image img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.preview-details {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-details h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+}
+
+.preview-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 1.5rem;
+}
+
+.preview-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.preview-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+}
+
+.preview-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.preview-select-btn {
+  background-color: #968576;
+  color: white;
+}
+
+.preview-cart-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.preview-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Loading and error states */
+.loading-container {
+  width: 100%;
+  text-align: center;
+  padding: 3rem;
+}
+
+.loading-content {
+  display: inline-block;
+}
+
+.loading-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #968576;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container {
+  text-align: center;
+  padding: 3rem;
+  color: #ff6b6b;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Notification styles */
+.mismatch-warning {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.suggestion-success {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: #66FF99;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+/* Animation classes */
+.item-added {
+  animation: itemAdded 0.5s ease;
+}
+
+.update-animation {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes scale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes itemAdded {
+  0% { transform: translateY(5px); opacity: 0.8; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(20px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .outfit-builder-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .outfit-mannequin {
+    min-height: 400px;
+  }
+  
+  .modal-content {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .outfit-preview-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .outfit-actions {
+    flex-direction: column;
+  }
+  
+  .outfit-save-btn, 
+  .outfit-buy-btn, 
+  .ai-suggestion-btn {
+    width: 100%;
+  }
+  
+  .mannequin-top {
+    width: 200px;
+    height: 120px;
+  }
+  
+  .mannequin-bottom {
+    width: 160px;
+    height: 150px;
+  }
+  
+  .mannequin-shoes {
+    width: 140px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .outfit-studio-header h1 {
+    font-size: 2rem;
+  }
+  
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .item-card {
+    min-width: 130px;
+  }
+  
+  .item-image {
+    height: 130px;
+  }
+}
+
+/* Notification styles */
+.notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 400px;
+}
+
+.notification.success {
+  background-color: #8AA992;
+  color: white;
+}
+
+.notification.error {
+  background-color: #D27D76;
+  color: white;
+}
+
+.notification-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Add style for cursive elements */
+.cursive-label {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: #968576;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Additional cursive styles for important information */
+.important-feature {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #968576;
+  font-weight: 700;
+  background-color: rgba(230, 221, 208, 0.3);
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 8px 0;
+  position: relative;
+}
+
+.important-feature::before {
+  content: '✨';
+  margin-right: 6px;
+}
+
+.discount-highlight {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: #D27D76;
+  background-color: rgba(210, 125, 118, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.discount-highlight::before {
+  content: '🔥';
+  margin-right: 4px;
+} 

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+.product-sheet-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem 1rem;
+  background: var(--color-bg-primary, #fff);
+}
+
+.product-sheet-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.product-sheet-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  padding-top: 0.5rem;
+}
+
+.product-sheet-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-bottom: 1px solid #222;
+  padding-bottom: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.product-sheet-label {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  color: #222;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.product-sheet-brand {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  color: #222;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+
+.product-sheet-value {
+  font-size: 1.3rem;
+  color: #181818;
+  margin-bottom: 0.1rem;
+}
+
+.handwritten {
+  font-family: 'Caveat', 'Shadows Into Light', cursive;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #181818;
+}
+
+.product-sheet-image-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
+}
+
+.product-sheet-image-bg {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.04);
+}
+
+.product-sheet-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  display: block;
+}
+
+.product-sheet-loading,
+.product-sheet-error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  padding: 3rem 0;
+}
+
+@media (max-width: 900px) {
+  .product-sheet-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .product-sheet-image-bg {
+    width: 90vw;
+    height: 60vw;
+    min-width: 220px;
+    min-height: 180px;
+    max-width: 350px;
+    max-height: 350px;
+  }
+} 

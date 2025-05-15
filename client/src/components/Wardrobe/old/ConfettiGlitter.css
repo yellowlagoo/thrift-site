@@ -1,0 +1,28 @@
+.confetti-glitter-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.confetti-glitter-particle {
+  position: absolute;
+  top: -24px;
+  animation: confettiGlitterFall 1.1s cubic-bezier(.42,1.52,.58,1) forwards, confettiGlitterTwinkle 0.7s infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes confettiGlitterFall {
+  0% { top: -24px; opacity: 0.7; }
+  10% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 90vh; opacity: 0.2; }
+}
+
+@keyframes confettiGlitterTwinkle {
+  0% { filter: brightness(1) drop-shadow(0 0 2px #fff8); }
+  100% { filter: brightness(1.7) drop-shadow(0 0 8px #fff); }
+} 

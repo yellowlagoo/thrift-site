@@ -1,0 +1,399 @@
+/* swiss-theme.css - Swiss Design System inspired by Dribbble image */
+
+/* Import Helvetica font for Swiss Design */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Typography Scale */
+  --font-xs: 0.75rem;    /* 12px */
+  --font-sm: 0.875rem;   /* 14px */
+  --font-base: 1rem;     /* 16px */
+  --font-md: 1.125rem;   /* 18px */
+  --font-lg: 1.25rem;    /* 20px */
+  --font-xl: 1.5rem;     /* 24px */
+  --font-2xl: 2rem;      /* 32px */
+  --font-3xl: 2.5rem;    /* 40px */
+  --font-4xl: 3rem;      /* 48px */
+  
+  /* Spacing Scale */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  
+  /* Swiss Design Color System */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray-100: #F7F7F7;
+  --color-gray-200: #EFEFEF;
+  --color-gray-300: #DFDFDF;
+  --color-gray-400: #B9B9B9;
+  --color-gray-500: #8C8C8C;
+  --color-gray-600: #5F5F5F;
+  --color-gray-700: #393939;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  
+  /* Swiss Design Primary Accent Colors */
+  --color-red: #E02020;
+  --color-blue: #0055FF;
+  --color-yellow: #FFE100;
+  
+  /* Functional Colors */
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-gray-100);
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-gray-700);
+  --color-text-tertiary: var(--color-gray-500);
+  --color-border: var(--color-gray-300);
+  --color-accent: var(--color-red);
+  
+  /* Layout */
+  --max-width: 1280px;
+  --grid-columns: 12;
+  --grid-gap: var(--space-lg);
+  --header-height: 80px;
+  --border-radius: 0;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--font-4xl);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: var(--font-3xl);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: var(--font-2xl);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: var(--font-xl);
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Layout & Container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+  margin: var(--space-2xl) 0;
+}
+
+/* Typography Utilities */
+.uppercase {
+  text-transform: uppercase;
+}
+
+.title-xl {
+  font-size: var(--font-4xl);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.title-lg {
+  font-size: var(--font-3xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.title-md {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: var(--font-md);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+/* Header Styling */
+.header-swiss {
+  background-color: var(--color-bg-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-swiss .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header-swiss .logo {
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.header-swiss .logo a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.header-swiss .main-nav {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.header-swiss .main-nav a {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: var(--font-sm);
+  letter-spacing: 0.05em;
+  padding: var(--space-xs) 0;
+  position: relative;
+}
+
+.header-swiss .main-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  transition: width 0.3s ease;
+}
+
+.header-swiss .main-nav a:hover::after,
+.header-swiss .main-nav a.active::after {
+  width: 100%;
+}
+
+/* Button Styles */
+.btn-swiss {
+  display: inline-block;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--space-md) var(--space-xl);
+  background-color: var(--color-text-primary);
+  color: var(--color-bg-primary);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: var(--font-sm);
+}
+
+.btn-swiss:hover {
+  background-color: var(--color-text-secondary);
+}
+
+.btn-swiss-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-text-primary);
+  color: var(--color-text-primary);
+}
+
+.btn-swiss-outline:hover {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg-primary);
+}
+
+.btn-swiss-accent {
+  background-color: var(--color-accent);
+}
+
+.btn-swiss-accent:hover {
+  background-color: var(--color-accent);
+  opacity: 0.9;
+}
+
+/* Footer Styling */
+.footer-swiss {
+  background-color: var(--color-bg-secondary);
+  padding: var(--space-3xl) 0;
+  margin-top: var(--space-3xl);
+}
+
+.footer-swiss .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-2xl);
+}
+
+.footer-swiss .footer-title {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+
+.footer-swiss .footer-links {
+  list-style: none;
+}
+
+.footer-swiss .footer-links li {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-swiss .footer-links a {
+  color: var(--color-text-secondary);
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-swiss .footer-links a:hover {
+  color: var(--color-text-primary);
+}
+
+/* Home Page Styling */
+.hero-swiss {
+  padding: var(--space-3xl) 0;
+  position: relative;
+}
+
+.hero-swiss::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.hero-content h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.hero-content .subtitle {
+  margin-bottom: var(--space-xl);
+  max-width: 80%;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 60%;
+  height: 60%;
+  background-color: var(--color-accent);
+  z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .footer-swiss .container {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-swiss .main-nav {
+    display: none;
+  }
+  
+  .hero-content .subtitle {
+    max-width: 100%;
+  }
+}
+
+.home-page-header.header-swiss {
+  background: transparent !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  border-bottom: none !important;
+  box-shadow: none !important;
+} 

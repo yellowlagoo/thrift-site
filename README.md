@@ -14,7 +14,6 @@ A modern e-commerce platform inspired by Cher's outfit picker from the movie "Cl
 
 ### Frontend
 - React.js (v18+)
-- Tailwind CSS for styling
 - React Router for navigation
 - React Query for data fetching
 - Framer Motion for animations

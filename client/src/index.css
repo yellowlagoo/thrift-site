@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* French Fashion Inspired Global Styles */
+:root {
+  --cream: #faf9f7;
+  --charcoal: #2d2d2d;
+  --soft-gray: #666666;
+  --light-gray: #f5f5f5;
+  --border-gray: #e5e5e5;
+  --accent-beige: #f7f4f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--charcoal);
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--charcoal);
+  color: white;
+  padding: 12px 32px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--charcoal);
+  border: 1px solid var(--charcoal);
+  padding: 12px 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--charcoal);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Card Styles */
+.product-card {
+  background: white;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.product-card img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Navigation Styles */
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--soft-gray);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -4px;
+  left: 50%;
+  background-color: var(--charcoal);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Form Styles */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-gray);
+  background-color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--charcoal);
+}
+
+.form-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.text-cream {
+  color: var(--cream);
+}
+
+.text-charcoal {
+  color: var(--charcoal);
+}
+
+.text-soft-gray {
+  color: var(--soft-gray);
+}
+
+.bg-cream {
+  background-color: var(--cream);
+}
+
+.bg-charcoal {
+  background-color: var(--charcoal);
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+
+.bg-accent-beige {
+  background-color: var(--accent-beige);
+}
+
+/* Border */
+.border-charcoal {
+  border-color: var(--charcoal);
+}
+
+.border-gray {
+  border-color: var(--border-gray);
+}
+
+/* Elegant spacing */
+.space-y-elegant > * + * {
+  margin-top: 2rem;
+}
+
+/* Elegant grid */
+.grid-elegant {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .grid-elegant {
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (min-width: 1024px) {
+  .grid-elegant {
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+
+@media (min-width: 1280px) {
+  .grid-elegant {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Text utilities */
+.text-elegant-sm {
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.text-elegant-base {
+  font-size: 0.9rem;
+  letter-spacing: 0.025em;
+}
+
+.text-elegant-lg {
+  font-size: 1.1rem;
+  letter-spacing: 0.025em;
+}
+
+/* French fashion specific utilities */
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+.tracking-elegant {
+  letter-spacing: 0.1em;
+}
+
+.tracking-elegant-wide {
+  letter-spacing: 0.2em;
+}
+
+/* Hover effects */
+.hover-lift:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* Custom shadows */
+.shadow-elegant {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-elegant-lg {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--soft-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--charcoal);
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--charcoal);
+  color: white;
+}
+
+/* Focus styles */
+*:focus {
+  outline: none;
+}
+
+/* Only show focus outline when navigating with keyboard */
+*:focus-visible {
+  outline: 2px solid var(--charcoal);
+  outline-offset: 2px;
+}
+
+/* Responsive text */
+@media (max-width: 640px) {
+  .text-responsive-xl {
+    font-size: 2rem;
+  }
+  
+  .text-responsive-lg {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .text-responsive-xl {
+    font-size: 3rem;
+}
+
+  .text-responsive-lg {
+    font-size: 2rem;
+  }
+}
+
+/* Loading states */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+}
+  100% {
+    background-position: -200% 0;
+  }
+}

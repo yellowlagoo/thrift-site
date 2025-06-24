@@ -1,0 +1,165 @@
+/* Checkout.css */
+
+.checkout-container {
+  min-height: 100vh;
+  background: #f4f4f4;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  padding-top: 32px;
+}
+
+.checkout-form {
+  width: 100%;
+  max-width: 900px;
+  background: transparent;
+}
+
+.checkout-columns {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+}
+
+.checkout-section {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 320px;
+}
+
+.checkout-section-title {
+  font-size: 1.25rem;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.checkout-input {
+  width: 100%;
+  font-family: 'Mulish', Arial, sans-serif;
+  font-size: 1rem;
+  border: 2px solid #222;
+  border-radius: 0;
+  background: #fff;
+  padding: 10px 12px;
+  margin-bottom: 0;
+  outline: none;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+.checkout-input:focus {
+  border-color: #111;
+}
+
+.checkout-row {
+  display: flex;
+  gap: 12px;
+}
+
+.checkout-input-half {
+  width: 100%;
+}
+
+.checkout-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 16px 0;
+}
+
+.checkout-checkbox {
+  accent-color: #111;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.checkout-checkbox-label {
+  font-family: 'Mulish', Arial, sans-serif;
+  font-size: 1rem;
+  color: #222;
+  cursor: pointer;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px 0;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 12px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.checkout-btn-primary {
+  background: #111;
+  color: #fff;
+}
+.checkout-btn-primary:hover {
+  background: #333;
+}
+
+.checkout-btn-secondary {
+  background: #111;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.checkout-btn-secondary:hover {
+  background: #333;
+}
+
+.checkout-legal {
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 12px;
+  text-align: left;
+  font-family: 'Mulish', Arial, sans-serif;
+}
+
+.checkout-link {
+  color: #111;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .checkout-columns {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .checkout-section {
+    min-width: 0;
+  }
+}
+
+.checkout-summary {
+  margin-top: 24px;
+  border-top: 2px solid #222;
+  padding-top: 16px;
+  font-family: 'Mulish', Arial, sans-serif;
+  font-size: 1.08rem;
+}
+
+.checkout-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.checkout-summary-total {
+  font-weight: bold;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-size: 1.13rem;
+  margin-top: 8px;
+}
+
+.checkout-summary-right {
+  margin-bottom: 18px;
+  margin-top: 0;
+} 
